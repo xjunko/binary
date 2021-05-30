@@ -46,10 +46,8 @@ fn swapdouble(n f64) f64 {
 fn get_size(n Numbers) int {
 	return match n {
 		i16, u16 { int(sizeof(u16)) }
-		int, u32 { int(sizeof(u32)) }
-		i64, u64 { int(sizeof(u64)) }
-		f32 { int(sizeof(f32)) }
-		f64 { int(sizeof(f64)) }
+		int, u32, f32 { int(sizeof(u32)) }
+		i64, u64, f64 { int(sizeof(u64)) }
 		else { int(0) }
 	}
 }
